@@ -40,6 +40,19 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+            
+            function launchCB() {
+                if(window.plugins.childBrowser != null)
+                {
+                    window.plugins.childBrowser.onLocationChange = function(loc){ alert("In index.html new loc = " + loc); };
+                    window.plugins.childBrowser.onClose = function(){alert("In index.html child browser closed");};
+                    window.plugins.childBrowser.onOpenExternal = function(){alert("In index.html onOpenExternal");};
+                    
+                    window.plugins.childBrowser.showWebPage('http://shereef.net');
+                } else
+                alert('not found');
+            }
         </script>
+        <input type='button' value="Click me!" onclick='launchCB()'/>
     </body>
 </html>
