@@ -23,7 +23,9 @@
 	<key>BackupWebStorage</key>
 	<true/>
 	<key>ExternalHosts</key>
-	<array/>
+	<array>
+		<string>*.shereef.net</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>ChildBrowserCommand</key>
